@@ -60,7 +60,7 @@ export function Header() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-fast"
+                  className="text-sm font-medium text-foreground hover:text-primary transition-fast"
                 >
                   {item.name}
                 </a>
@@ -68,7 +68,7 @@ export function Header() {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-fast"
+                  className="text-sm font-medium text-foreground hover:text-primary transition-fast"
                 >
                   {item.name}
                 </Link>
