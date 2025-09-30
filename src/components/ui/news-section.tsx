@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import processoSeletivoImg from "@/assets/processo-seletivo.jpg";
 
 const newsItems = [
   {
@@ -15,8 +16,8 @@ A lista com os aprovados está disponível nas imagens deste post, na aba "Notí
 Aos novos integrantes, sejam muito bem-vindos! Estamos entusiasmados para iniciar mais um ciclo de desafios, projetos e aprendizados. Contamos com vocês!
 
 Agradecemos a todos os novos membros e desejamos sucesso em suas jornadas acadêmicas e profissionais. O futuro da eficiência energética passa por vocês!`,
-    link: "https://www.instagram.com/p/DLNzcT7RbUm/?utm_source=ig_web_copy_link&igsh=bTU0d2RpbTIwZWdo",
-    image: "/api/placeholder/400/300",
+    link: "https://www.instagram.com/p/DLNzcT7RbUm/?utm_source=ig_web_copy_link&igsh=bTU0d2RpbTIwZWho",
+    image: processoSeletivoImg,
     date: "Janeiro 2025"
   },
   {
@@ -71,13 +72,12 @@ export function NewsSection() {
               <div className="grid md:grid-cols-2 gap-0">
                 {/* Image Section */}
                 <div className="relative">
-                  <div className="aspect-[4/3] bg-gradient-primary flex items-center justify-center">
-                    <div className="text-center text-primary-foreground p-8">
-                      <div className="w-24 h-24 bg-primary-foreground/20 rounded-full flex items-center justify-center mb-4 mx-auto">
-                        <span className="text-2xl font-bold">GCEE</span>
-                      </div>
-                      <p className="text-sm opacity-90">{currentItem.date}</p>
-                    </div>
+                  <div className="aspect-[4/3] bg-muted overflow-hidden">
+                    <img 
+                      src={currentItem.image} 
+                      alt={currentItem.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   
                   {/* Navigation arrows */}
