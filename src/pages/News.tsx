@@ -7,6 +7,7 @@ import { Footer } from "@/components/ui/footer";
 import processoSeletivoImg from "@/assets/processo-seletivo.jpg";
 import shellVictoryPodium from "@/assets/shell-victory-podium.png";
 import shellVictoryTeam from "@/assets/shell-victory-team.png";
+import teamTechnicalInspection from "@/assets/team-technical-inspection.png";
 
 const newsItems = [
   {
@@ -43,7 +44,7 @@ Agradecemos a todos os novos membros e desejamos sucesso em suas jornadas acadê
     summary: "GCEE confirma participação na competição internacional de eficiência energética.",
     content: "Nossa equipe está se preparando intensivamente para a próxima edição da Shell Eco-marathon. Este ano, focamos em inovações sustentáveis e tecnologias limpas que podem revolucionar o transporte do futuro.",
     link: "#",
-    images: ["/api/placeholder/400/300"],
+    images: [teamTechnicalInspection],
     date: "Dezembro 2024"
   },
   {

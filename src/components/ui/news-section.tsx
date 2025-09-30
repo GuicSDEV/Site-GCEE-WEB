@@ -3,8 +3,32 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import processoSeletivoImg from "@/assets/processo-seletivo.jpg";
-
+import shellVictoryPodium from "@/assets/shell-victory-podium.png";
+import shellVictoryTeam from "@/assets/shell-victory-team.png";
+import teamTechnicalInspection from "@/assets/team-technical-inspection.png";
 const newsItems = [
+  {id: 3,
+    title: "GCEE Vencedor da Shell Eco-marathon 2025",
+    summary: "O Grupo Cataratas de Eficiência Energética conquistou o 1º lugar na categoria Conceito Urbano (URBAN) com célula de hidrogênio na Shell Eco-marathon Brasil 2025!",
+    content: `Uma conquista histórica para o GCEE! Nossa equipe alcançou o primeiro lugar na categoria Conceito Urbano (URBAN) com célula de hidrogênio na Shell Eco-marathon Brasil 2025, realizada no Rio de Janeiro.
+
+A Shell Eco-marathon é uma das competições mais prestigiadas do mundo em eficiência energética e mobilidade sustentável. Nosso protótipo demonstrou excelência técnica, inovação e comprometimento com um futuro mais limpo e eficiente.
+
+Esta vitória é resultado de meses de dedicação, pesquisa e trabalho em equipe. Parabéns a todos os membros que tornaram este sonho realidade!`,
+    link: "https://www.instagram.com/gcee_unila/",
+    image: shellVictoryTeam,
+    date: "Agosto 2025"
+    
+  },
+  {
+    id: 2,
+    title: "Participação na Shell Eco-marathon",
+    summary: "GCEE confirma participação na competição internacional de eficiência energética.",
+    content: "Nossa equipe está se preparando intensivamente para a próxima edição da Shell Eco-marathon. Este ano, focamos em inovações sustentáveis e tecnologias limpas que podem revolucionar o transporte do futuro.",
+    link: "#",
+    image: teamTechnicalInspection,
+    date: "Dezembro 2024"
+  },
   {
     id: 1,
     title: "Resultado do Processo Seletivo de 2025",
@@ -19,24 +43,6 @@ Agradecemos a todos os novos membros e desejamos sucesso em suas jornadas acadê
     link: "https://www.instagram.com/p/DLNzcT7RbUm/?utm_source=ig_web_copy_link&igsh=bTU0d2RpbTIwZWho",
     image: processoSeletivoImg,
     date: "Janeiro 2025"
-  },
-  {
-    id: 2,
-    title: "Participação na Shell Eco-marathon",
-    summary: "GCEE confirma participação na competição internacional de eficiência energética.",
-    content: "Nossa equipe está se preparando intensivamente para a próxima edição da Shell Eco-marathon. Este ano, focamos em inovações sustentáveis e tecnologias limpas que podem revolucionar o transporte do futuro.",
-    link: "#",
-    image: "/api/placeholder/400/300",
-    date: "Dezembro 2024"
-  },
-  {
-    id: 3,
-    title: "Novo Laboratório de Pesquisa",
-    summary: "Inauguração do laboratório dedicado a pesquisas em eficiência energética.",
-    content: "Com equipamentos de última geração, o novo laboratório permitirá pesquisas mais avançadas em tecnologias sustentáveis e desenvolvimento de soluções inovadoras para o setor energético.",
-    link: "#",
-    image: "/api/placeholder/400/300",
-    date: "Novembro 2024"
   }
 ];
 
