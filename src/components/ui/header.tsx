@@ -1,11 +1,15 @@
 import { useState } from "react";
-import { Menu, X, Search, Facebook, Instagram, Youtube, Music } from "lucide-react";
+import { Menu, X, Facebook, Instagram, Youtube, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 import gceeLogotype from "@/assets/gcee-logo.jpeg";
 import gceeBird from "@/assets/gcee-bird.jpeg";
-import { cn } from "@/lib/utils";
+
+const languages = [
+  { code: 'pt', flag: '🇧🇷', name: 'Português' },
+  { code: 'en', flag: '🇺🇸', name: 'English' },
+  { code: 'es', flag: '🇪🇸', name: 'Español' }
+];
 
 const socialLinks = [
   { icon: Facebook, href: "https://www.facebook.com/grupocataratas/", label: "Facebook" },
@@ -25,6 +29,7 @@ const navigation = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState('pt');
 
   return (
     <div className="relative">
@@ -76,7 +81,7 @@ export function Header() {
             ))}
           </nav>
 
-          {/* Desktop Social Links & Search */}
+          {/* Desktop Social Links & Language */}
           <div className="hidden lg:flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               {socialLinks.map((social) => (
@@ -99,12 +104,21 @@ export function Header() {
               ))}
             </div>
             
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-              <Input
-                placeholder="Pesquisar..."
-                className="pl-10 w-40 focus:w-60 transition-smooth"
-              />
+            <div className="h-6 w-px bg-border" />
+            
+            <div className="flex items-center space-x-2">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => setCurrentLanguage(lang.code)}
+                  className={`text-2xl transition-all hover:scale-110 ${
+                    currentLanguage === lang.code ? 'opacity-100 scale-110' : 'opacity-50'
+                  }`}
+                  title={lang.name}
+                >
+                  {lang.flag}
+                </button>
+              ))}
             </div>
           </div>
 
@@ -182,9 +196,19 @@ export function Header() {
 
                 {/* Footer */}
                 <div className="p-6 border-t border-border space-y-4">
-                  <div className="relative">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                    <Input placeholder="Pesquisar..." className="pl-10" />
+                  <div className="flex items-center justify-center space-x-4 mb-4">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => setCurrentLanguage(lang.code)}
+                        className={`flex flex-col items-center space-y-1 transition-all hover:scale-110 ${
+                          currentLanguage === lang.code ? 'opacity-100 scale-110' : 'opacity-50'
+                        }`}
+                      >
+                        <span className="text-3xl">{lang.flag}</span>
+                        <span className="text-xs text-muted-foreground">{lang.name}</span>
+                      </button>
+                    ))}
                   </div>
 
                   <div className="grid grid-cols-2 gap-2">
