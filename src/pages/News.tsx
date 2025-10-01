@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { Header } from "@/components/ui/header";
 import { Footer } from "@/components/ui/footer";
+import { useLanguage } from "@/contexts/LanguageContext";
 import processoSeletivoImg from "@/assets/processo-seletivo.jpg";
 import shellVictoryPodium from "@/assets/shell-victory-podium.png";
 import shellVictoryTeam from "@/assets/shell-victory-team.png";
@@ -59,6 +60,7 @@ Agradecemos a todos os novos membros e desejamos sucesso em suas jornadas acadê
 ];
 
 export default function News() {
+  const { t } = useLanguage();
   const [currentNews, setCurrentNews] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -92,11 +94,11 @@ export default function News() {
           <div className="container px-4">
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                Notícias do
-                <span className="bg-gradient-energy bg-clip-text text-transparent"> GCEE</span>
+                {t('news.hero.title')}
+                <span className="bg-gradient-energy bg-clip-text text-transparent"> {t('news.hero.gcee')}</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground">
-                Acompanhe as últimas novidades, conquistas e eventos do Grupo Cataratas de Eficiência Energética
+                {t('news.hero.description')}
               </p>
             </div>
           </div>
@@ -169,7 +171,7 @@ export default function News() {
                           className="bg-background/80 hover:bg-background text-foreground shadow-md"
                         >
                           <ChevronLeft className="w-4 h-4" />
-                          <span className="ml-2">Anterior</span>
+                          <span className="ml-2">{t('news.prev')}</span>
                         </Button>
                       </div>
                       <div className="absolute bottom-4 right-4">
@@ -179,7 +181,7 @@ export default function News() {
                           onClick={nextNews}
                           className="bg-background/80 hover:bg-background text-foreground shadow-md"
                         >
-                          <span className="mr-2">Próxima</span>
+                          <span className="mr-2">{t('news.next')}</span>
                           <ChevronRight className="w-4 h-4" />
                         </Button>
                       </div>
@@ -214,7 +216,7 @@ export default function News() {
                             rel="noopener noreferrer"
                             className="flex items-center space-x-2"
                           >
-                            <span>LEIA MAIS</span>
+                            <span>{t('news.readMore')}</span>
                             <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-smooth" />
                           </a>
                         </Button>

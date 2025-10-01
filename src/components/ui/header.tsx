@@ -2,13 +2,14 @@ import { useState } from "react";
 import { Menu, X, Facebook, Instagram, Youtube, Music } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 import gceeLogotype from "@/assets/gcee-logo.jpeg";
 import gceeBird from "@/assets/gcee-bird.jpeg";
 
 const languages = [
-	{ code: "pt", flag: "🇧🇷", name: "Português" },
-	{ code: "en", flag: "🇺🇸", name: "English" },
-	{ code: "es", flag: "🇪🇸", name: "Español" },
+	{ code: "pt" as const, flag: "🇧🇷", name: "Português" },
+	{ code: "en" as const, flag: "🇺🇸", name: "English" },
+	{ code: "es" as const, flag: "🇪🇸", name: "Español" },
 ];
 
 const socialLinks = [
@@ -34,22 +35,23 @@ const socialLinks = [
 	},
 ];
 
-const navigation = [
-	{
-		name: "Unioeste",
-		href: "https://www.unioeste.br/portal/campus-foz-do-iguacu/",
-		external: true,
-	},
-	{ name: "Início", href: "/" },
-	{ name: "Projetos", href: "/projetos" },
-	{ name: "Notícias", href: "/noticias" },
-	{ name: "Propósito", href: "/proposito" },
-	{ name: "Patrocinadores", href: "/patrocinadores" },
-];
 
 export function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-	const [currentLanguage, setCurrentLanguage] = useState("pt");
+	const { language, setLanguage, t } = useLanguage();
+	
+	const navigation = [
+		{
+			name: "Unioeste",
+			href: "https://www.unioeste.br/portal/campus-foz-do-iguacu/",
+			external: true,
+		},
+		{ name: t('nav.home'), href: "/" },
+		{ name: t('nav.projects'), href: "/projetos" },
+		{ name: t('nav.news'), href: "/noticias" },
+		{ name: t('nav.about'), href: "/sobre-nos" },
+		{ name: t('nav.sponsors'), href: "/patrocinadores" },
+	];
 
 	return (
 		<div className="relative">
@@ -134,9 +136,9 @@ export function Header() {
 							{languages.map((lang) => (
 								<button
 									key={lang.code}
-									onClick={() => setCurrentLanguage(lang.code)}
+									onClick={() => setLanguage(lang.code)}
 									className={`text-2xl transition-all hover:scale-110 ${
-										currentLanguage === lang.code
+										language === lang.code
 											? "opacity-100 scale-110"
 											: "opacity-50"
 									}`}
@@ -219,9 +221,9 @@ export function Header() {
 								{languages.map((lang) => (
 									<button
 										key={lang.code}
-										onClick={() => setCurrentLanguage(lang.code)}
+										onClick={() => setLanguage(lang.code)}
 										className={`flex flex-col items-center space-y-1 transition-all hover:scale-110 ${
-											currentLanguage === lang.code
+											language === lang.code
 												? "opacity-100 scale-110"
 												: "opacity-50"
 										}`}
