@@ -144,26 +144,18 @@ export default function Sponsors() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {sponsors.map((sponsor) => (
                   <Card key={sponsor.name} className="bg-gradient-card border-0 shadow-lg overflow-hidden hover:shadow-xl transition-smooth">
-                    <CardContent className="p-0">
-                      {/* Banner or Logo Display */}
-                      <div className="bg-white p-8 flex items-center justify-center min-h-[200px]">
-                        {sponsor.banner ? (
-                          <img
-                            src={sponsor.banner}
-                            alt={sponsor.name}
-                            className="w-full h-auto object-contain"
-                          />
-                        ) : (
-                          <img
-                            src={sponsor.logo}
-                            alt={sponsor.name}
-                            className="max-w-[200px] max-h-[120px] w-auto h-auto object-contain"
-                          />
-                        )}
+                    <CardContent className="p-6 space-y-4">
+                      {/* Logo */}
+                      <div className="bg-white p-6 rounded-lg flex items-center justify-center min-h-[150px]">
+                        <img
+                          src={sponsor.logo}
+                          alt={sponsor.name}
+                          className="max-w-[180px] max-h-[100px] w-auto h-auto object-contain"
+                        />
                       </div>
 
                       {/* Content */}
-                      <div className="p-6 space-y-4">
+                      <div className="space-y-4">
                         <h3 className="text-xl font-bold text-foreground">
                           {sponsor.name}
                         </h3>
@@ -171,7 +163,7 @@ export default function Sponsors() {
                           {sponsor.description}
                         </p>
                         
-                        {sponsor.videoUrl ? (
+                        {sponsor.videoUrl && (
                           <div className="aspect-video">
                             <iframe
                               src={sponsor.videoUrl}
@@ -181,7 +173,7 @@ export default function Sponsors() {
                               allowFullScreen
                             />
                           </div>
-                        ) : null}
+                        )}
 
                         <Button
                           className="w-full bg-accent hover:bg-accent-light text-accent-foreground group"
