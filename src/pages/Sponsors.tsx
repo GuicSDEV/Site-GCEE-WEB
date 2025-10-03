@@ -34,14 +34,16 @@ const sponsors: Sponsor[] = [
     name: "Shell",
     logo: shellLogo,
     website: "https://www.shell.com.br",
-    description: "Líder global em energia e petroquímica, a Shell apoia projetos de mobilidade sustentável através da Shell Eco-marathon."
+    description: "Líder global em energia e petroquímica, a Shell apoia projetos de mobilidade sustentável através da Shell Eco-marathon.",
+    videoUrl: "https://www.youtube.com/embed/3bZJAjiKbuM"
   },
   {
     name: "Itaipu Binacional",
     logo: itaipuLogo,
     website: "https://www.itaipu.gov.br",
     description: "A maior geradora de energia limpa e renovável do planeta, localizada na fronteira entre Brasil e Paraguai.",
-    banner: itaipuBanner
+    banner: itaipuBanner,
+    videoUrl: "https://www.youtube.com/embed/yourVideoIdHere"
   },
   {
     name: "PTI",
