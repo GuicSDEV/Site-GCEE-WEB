@@ -35,27 +35,28 @@ const sponsors: Sponsor[] = [
     logo: shellLogo,
     website: "https://www.shell.com.br",
     description: "Líder global em energia e petroquímica, a Shell apoia projetos de mobilidade sustentável através da Shell Eco-marathon.",
-    videoUrl: "https://www.youtube.com/embed/3bZJAjiKbuM"
+    videoUrl: "https://www.youtube.com/embed/UWLBvm_scnE"
   },
   {
     name: "Itaipu Binacional",
     logo: itaipuLogo,
     website: "https://www.itaipu.gov.br",
     description: "A maior geradora de energia limpa e renovável do planeta, localizada na fronteira entre Brasil e Paraguai.",
-    banner: itaipuBanner,
-    videoUrl: "https://www.youtube.com/embed/yourVideoIdHere"
+    videoUrl: "https://www.youtube.com/embed/5Kejx8uZ9pg"
   },
   {
     name: "PTI",
     logo: ptiLogo,
     website: "https://www.pti.org.br",
-    description: "Parque Tecnológico Itaipu - Promove o desenvolvimento científico, tecnológico e de inovação da região."
+    description: "Parque Tecnológico Itaipu - Promove o desenvolvimento científico, tecnológico e de inovação da região.",
+    videoUrl: "https://www.youtube.com/embed/us9op0jeDCg"
   },
   {
     name: "Swagelok",
     logo: swagelokLogo,
     website: "https://www.swagelok.com",
-    description: "Referência mundial em conexões e válvulas de alta qualidade para sistemas de fluidos."
+    description: "Referência mundial em conexões e válvulas de alta qualidade para sistemas de fluidos.",
+    videoUrl: "https://www.youtube.com/embed/blsTJgICs-U"
   },
   {
     name: "XBRI",
@@ -68,7 +69,8 @@ const sponsors: Sponsor[] = [
     name: "Unila",
     logo: unilaLogo,
     website: "https://www.unila.edu.br",
-    description: "Universidade Federal da Integração Latino-Americana."
+    description: "Universidade Federal da Integração Latino-Americana.",
+    videoUrl: "https://www.youtube.com/embed/k__tQPz6XL0"
   },
   {
     name: "Labmaker",
@@ -163,7 +165,15 @@ export default function Sponsors() {
                           {sponsor.description}
                         </p>
                         
-                        {sponsor.videoUrl && (
+                        {sponsor.banner ? (
+                          <div className="aspect-video rounded-lg overflow-hidden">
+                            <img
+                              src={sponsor.banner}
+                              alt={`${sponsor.name} banner`}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        ) : sponsor.videoUrl ? (
                           <div className="aspect-video">
                             <iframe
                               src={sponsor.videoUrl}
@@ -173,7 +183,7 @@ export default function Sponsors() {
                               allowFullScreen
                             />
                           </div>
-                        )}
+                        ) : null}
 
                         <Button
                           className="w-full bg-accent hover:bg-accent-light text-accent-foreground group"

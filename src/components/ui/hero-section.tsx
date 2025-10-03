@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Play } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function HeroSection() {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background with gradient overlay */}
@@ -16,26 +19,19 @@ export function HeroSection() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight">
-                A SHELL
+                {t('home.hero.title')}
                 <span className="block bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
-                  ECO-MARATHON
+                  {t('home.hero.subtitle')}
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed max-w-2xl">
-                A Shell Eco-marathon é um dos principais programas de engenharia em 
-                eficiência energética para estudantes no mundo. Seu objetivo é ultrapassar 
-                os limites do que é tecnicamente possível e inspirar os jovens a se tornarem 
-                cientistas e engenheiros líderes em soluções energéticas do futuro.
+                {t('home.hero.description')}
               </p>
             </div>
             
             <div className="space-y-4">
               <p className="text-primary-foreground/80 leading-relaxed">
-                O programa oferece uma plataforma para que equipes do ensino médio e 
-                universitário explorem todos os aspectos do design e da tecnologia, 
-                utilizando seus conhecimentos em Ciência, Tecnologia, Engenharia e 
-                Matemática (STEM) para construir seus próprios carros ultraeficientes 
-                em energia.
+                {t('home.hero.content')}
               </p>
               
               <Button
@@ -49,7 +45,7 @@ export function HeroSection() {
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2"
                 >
-                  <span>SAIBA MAIS</span>
+                  <span>{t('home.hero.button')}</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-smooth" />
                 </a>
               </Button>
@@ -81,9 +77,9 @@ export function HeroSection() {
                   </div>
                 </div>
                 <div className="mt-4 text-center">
-                  <h3 className="font-semibold text-primary-foreground">What is Shell Eco-marathon?</h3>
+                  <h3 className="font-semibold text-primary-foreground">{t('home.hero.videoTitle')}</h3>
                   <p className="text-sm text-primary-foreground/70 mt-1">
-                    Descubra como estudantes transformam energia em inovação
+                    {t('home.hero.videoDescription')}
                   </p>
                 </div>
               </CardContent>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import processoSeletivoImg from "@/assets/processo-seletivo.jpg";
 import shellVictoryPodium from "@/assets/shell-victory-podium.png";
 import shellVictoryTeam from "@/assets/shell-victory-team.png";
@@ -47,6 +48,7 @@ Agradecemos a todos os novos membros e desejamos sucesso em suas jornadas acadê
 ];
 
 export function NewsSection() {
+  const { t } = useLanguage();
   const [currentNews, setCurrentNews] = useState(0);
 
   const nextNews = () => {
@@ -64,11 +66,11 @@ export function NewsSection() {
       <div className="container px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Notícias em 
-            <span className="bg-gradient-energy bg-clip-text text-transparent"> Destaque</span>
+            {t('home.news.title')} 
+            <span className="bg-gradient-energy bg-clip-text text-transparent"> {t('home.news.highlight')}</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Acompanhe as últimas novidades e conquistas do GCEE
+            {t('home.news.description')}
           </p>
         </div>
 
@@ -137,7 +139,7 @@ export function NewsSection() {
                         rel="noopener noreferrer"
                         className="flex items-center space-x-2"
                       >
-                        <span>LEIA MAIS</span>
+                        <span>{t('home.news.readMore')}</span>
                         <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-smooth" />
                       </a>
                     </Button>
