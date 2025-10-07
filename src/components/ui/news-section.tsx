@@ -7,7 +7,22 @@ import processoSeletivoImg from "@/assets/processo-seletivo.jpg";
 import shellVictoryPodium from "@/assets/shell-victory-podium.png";
 import shellVictoryTeam from "@/assets/shell-victory-team.png";
 import teamTechnicalInspection from "@/assets/team-technical-inspection.png";
+import paranaFazCiencia1 from "@/assets/parana-faz-ciencia-1.webp";
+import paranaFazCiencia2 from "@/assets/parana-faz-ciencia-2.webp";
 const newsItems = [
+  {
+    id: 4,
+    title: "Veículo movido a hidrogênio desenvolvido na Unioeste está no Paraná Faz Ciência 2025",
+    summary: "O Grupo Cataratas de Eficiência Energética (GCEE) apresenta seu protótipo de veículo elétrico movido a hidrogênio no evento Paraná Faz Ciência 2025.",
+    content: `O GCEE, vinculado à Unioeste, desenvolve um projeto de extensão focado na pesquisa e construção de protótipos de veículos elétricos, categoria conceito urbano movidos a hidrogênio, utilizando células de combustível tipo PEM.
+
+O objetivo é promover a mobilidade urbana sustentável por meio de soluções limpas e eficientes, incentivando o uso do hidrogênio verde como alternativa aos combustíveis fósseis. O impacto do projeto extrapola o âmbito acadêmico, com participação em competições nacionais e internacionais.
+
+"A gente usa o hidrogênio como gás e passando pela célula combustível, faz a união junto com hidrogênio e oxigênio, tendo como resíduo água e energia. É um veículo 100% sustentável", explica o acadêmico de Engenharia Mecânica, Vinícius Oliveira Sofia.`,
+    link: "https://www.unioeste.br/portal/central-de-noticias/81641-veiculo-movido-a-nitrogenio-desenvolvido-na-unioeste-esta-no-parana-faz-ciencia-2025",
+    image: paranaFazCiencia1,
+    date: "Outubro 2025"
+  },
   {id: 3,
     title: "GCEE Vencedor da Shell Eco-marathon 2025",
     summary: "O Grupo Cataratas de Eficiência Energética conquistou o 1º lugar na categoria Conceito Urbano (URBAN) com célula de hidrogênio na Shell Eco-marathon Brasil 2025!",

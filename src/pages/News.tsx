@@ -9,10 +9,25 @@ import processoSeletivoImg from "@/assets/processo-seletivo.jpg";
 import shellVictoryPodium from "@/assets/shell-victory-podium.png";
 import shellVictoryTeam from "@/assets/shell-victory-team.png";
 import teamTechnicalInspection from "@/assets/team-technical-inspection.png";
+import paranaFazCiencia1 from "@/assets/parana-faz-ciencia-1.webp";
+import paranaFazCiencia2 from "@/assets/parana-faz-ciencia-2.webp";
 
 const newsItems = [
   {
     id: 1,
+    title: "Veículo movido a hidrogênio desenvolvido na Unioeste está no Paraná Faz Ciência 2025",
+    summary: "O Grupo Cataratas de Eficiência Energética (GCEE) apresenta seu protótipo de veículo elétrico movido a hidrogênio no evento Paraná Faz Ciência 2025.",
+    content: `O GCEE, vinculado à Unioeste, desenvolve um projeto de extensão focado na pesquisa e construção de protótipos de veículos elétricos, categoria conceito urbano movidos a hidrogênio, utilizando células de combustível tipo PEM.
+
+O objetivo é promover a mobilidade urbana sustentável por meio de soluções limpas e eficientes, incentivando o uso do hidrogênio verde como alternativa aos combustíveis fósseis. O impacto do projeto extrapola o âmbito acadêmico, com participação em competições nacionais e internacionais como a Shell Eco-Marathon.
+
+"A gente usa o hidrogênio como gás e passando pela célula combustível, faz a união junto com hidrogênio e oxigênio, tendo como resíduo água e energia. Essa energia passa por uma controladora e é distribuída para dois motores elétricos de 500W. É um veículo 100% sustentável. É uma tecnologia nova no mercado, e nos ajuda na graduação para que, no mercado de trabalho, poder entrar na indústria do hidrogênio, já ter um conhecimento prévio sobre essa tecnologia", explica o acadêmico de Engenharia Mecânica, Vinícius Oliveira Sofia.`,
+    link: "https://www.unioeste.br/portal/central-de-noticias/81641-veiculo-movido-a-nitrogenio-desenvolvido-na-unioeste-esta-no-parana-faz-ciencia-2025",
+    images: [paranaFazCiencia1, paranaFazCiencia2],
+    date: "Outubro 2025"
+  },
+  {
+    id: 2,
     title: "GCEE Vencedor da Shell Eco-marathon 2025",
     summary: "O Grupo Cataratas de Eficiência Energética conquistou o 1º lugar na categoria Conceito Urbano (URBAN) com célula de hidrogênio na Shell Eco-marathon Brasil 2025!",
     content: `Uma conquista histórica para o GCEE! Nossa equipe alcançou o primeiro lugar na categoria Conceito Urbano (URBAN) com célula de hidrogênio na Shell Eco-marathon Brasil 2025, realizada no Rio de Janeiro.
@@ -25,7 +40,7 @@ Esta vitória é resultado de meses de dedicação, pesquisa e trabalho em equip
     date: "Agosto 2025"
   },
   {
-    id: 2,
+    id: 3,
     title: "Resultado do Processo Seletivo de 2025",
     summary: "O Grupo Cataratas de Eficiência Energética (GCEE) tem a satisfação de anunciar o resultado oficial do Processo Seletivo 2025!",
     content: `Após um criterioso processo de análise e entrevistas, queremos parabenizar todos os candidatos que demonstraram empenho, criatividade e dedicação durante todas as entrevistas. A seleção deste ano reforça o compromisso do GCEE com a excelência acadêmica, a inovação em engenharia e o desenvolvimento de soluções sustentáveis.
@@ -40,7 +55,7 @@ Agradecemos a todos os novos membros e desejamos sucesso em suas jornadas acadê
     date: "Janeiro 2025"
   },
   {
-    id: 3,
+    id: 4,
     title: "Participação na Shell Eco-marathon",
     summary: "GCEE confirma participação na competição internacional de eficiência energética.",
     content: "Nossa equipe está se preparando intensivamente para a próxima edição da Shell Eco-marathon. Este ano, focamos em inovações sustentáveis e tecnologias limpas que podem revolucionar o transporte do futuro.",
@@ -49,7 +64,7 @@ Agradecemos a todos os novos membros e desejamos sucesso em suas jornadas acadê
     date: "Dezembro 2024"
   },
   {
-    id: 4,
+    id: 5,
     title: "Novo Laboratório de Pesquisa",
     summary: "Inauguração do laboratório dedicado a pesquisas em eficiência energética.",
     content: "Com equipamentos de última geração, o novo laboratório permitirá pesquisas mais avançadas em tecnologias sustentáveis e desenvolvimento de soluções inovadoras para o setor energético.",
