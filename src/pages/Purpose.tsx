@@ -49,7 +49,7 @@ const Purpose = () => {
                     
                     <div className="space-y-6 text-muted-foreground leading-relaxed">
                       <p>
-                        {t('about.main.description')}
+                        {t('about.main.gceeDescription')}
                       </p>
                     </div>
                   </div>
