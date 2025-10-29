@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Countdown } from "@/components/ui/countdown";
 import { ArrowRight, Play } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -53,7 +54,7 @@ export function HeroSection() {
           </div>
 
           {/* Video Card */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex flex-col gap-6 justify-center lg:justify-end">
             <Card className="bg-background/10 backdrop-blur-sm border-white/20 shadow-2xl max-w-md w-full">
               <CardContent className="p-6">
                 <div className="relative aspect-video rounded-lg overflow-hidden bg-black/20">
@@ -84,6 +85,11 @@ export function HeroSection() {
                 </div>
               </CardContent>
             </Card>
+            
+            {/* Countdown */}
+            <div className="max-w-md w-full">
+              <Countdown />
+            </div>
           </div>
         </div>
       </div>

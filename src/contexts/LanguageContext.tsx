@@ -41,6 +41,12 @@ export const translations = {
     'home.news.highlight': 'Destaque',
     'home.news.description': 'Acompanhe as últimas novidades e conquistas do GCEE',
     'home.news.readMore': 'LEIA MAIS',
+    'home.countdown.title': 'Shell Eco-marathon United States 2026',
+    'home.countdown.date': 'De 7 a 11 de abril de 2026',
+    'home.countdown.days': 'Dias',
+    'home.countdown.hours': 'Horas',
+    'home.countdown.minutes': 'Minutos',
+    'home.countdown.seconds': 'Segundos',
     
     // News Page
     'news.hero.title': 'Notícias do',
@@ -119,6 +125,12 @@ export const translations = {
     'home.news.highlight': 'News',
     'home.news.description': 'Follow the latest news and achievements from GCEE',
     'home.news.readMore': 'READ MORE',
+    'home.countdown.title': 'Shell Eco-marathon United States 2026',
+    'home.countdown.date': 'April 7 to 11, 2026',
+    'home.countdown.days': 'Days',
+    'home.countdown.hours': 'Hours',
+    'home.countdown.minutes': 'Minutes',
+    'home.countdown.seconds': 'Seconds',
     
     // News Page
     'news.hero.title': 'News from',
@@ -197,6 +209,12 @@ export const translations = {
     'home.news.highlight': 'Destacadas',
     'home.news.description': 'Siga las últimas noticias y logros de GCEE',
     'home.news.readMore': 'LEER MÁS',
+    'home.countdown.title': 'Shell Eco-marathon United States 2026',
+    'home.countdown.date': 'Del 7 al 11 de abril de 2026',
+    'home.countdown.days': 'Días',
+    'home.countdown.hours': 'Horas',
+    'home.countdown.minutes': 'Minutos',
+    'home.countdown.seconds': 'Segundos',
     
     // News Page
     'news.hero.title': 'Noticias de',
