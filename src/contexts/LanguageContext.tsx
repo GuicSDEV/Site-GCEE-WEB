@@ -30,6 +30,7 @@ export const translations = {
     'home.about.title': 'Sobre',
     'home.about.team': 'Nossa Equipe',
     'home.about.description': 'O Grupo Cataratas de Eficiência Energética é formado por estudantes comprometidos com a inovação em mobilidade sustentável',
+    'home.about.gceeDescription': 'O Grupo Cataratas de Eficiência Energética – GCEE, foi formado em 2009 por alunos dos cursos de Engenharia Elétrica e Engenharia Mecânica, posteriormente integrando estudantes de Ciências da Computação, da Universidade Estadual do Oeste do Paraná – Unioeste, Campus de Foz do Iguaçu e Engenharia de Energia da Universidade Federal da Integração Latino Americana – Unila, contando com apoio dos professores, registro de Projeto de Extensão na instituição, e gerenciado pela Fundação de Apoio ao Ensino, Extensão, Pesquisa e Pós-graduação – FUNDEP. O principal objetivo do Grupo é desenvolver veículos ultra eficientes movidos a combustíveis sustentáveis com foco em competições de eficiência energética, exposições e apresentações e eventos para a divulgação dos veículos desenvolvidos. Ressalta-se o histórico de participação em competições como a Maratona Universitária de Eficiência Energética – MUEE e a Shell-Eco Marathon.',
     'home.about.teamwork.title': 'Trabalho em Equipe',
     'home.about.teamwork.description': 'Estudantes de diversas áreas trabalhando juntos em soluções inovadoras',
     'home.about.efficiency.title': 'Eficiência Energética',
@@ -68,6 +69,7 @@ export const translations = {
     'sponsors.visit': 'VISITAR SITE',
     'sponsors.cta.title': 'Quer Ser Nosso Parceiro?',
     'sponsors.cta.description': 'Junte-se ao GCEE e faça parte da revolução em eficiência energética!',
+    'sponsors.cta.downloadLetter': 'Baixar Carta de Patrocínio',
     'sponsors.cta.button': 'ENTRE EM CONTATO',
     
     // Projects Page
@@ -105,6 +107,7 @@ export const translations = {
     'home.about.title': 'About',
     'home.about.team': 'Our Team',
     'home.about.description': 'The Cataratas Energy Efficiency Group is formed by students committed to innovation in sustainable mobility',
+    'home.about.gceeDescription': 'The Cataratas Energy Efficiency Group – GCEE, was formed in 2009 by students from Electrical Engineering and Mechanical Engineering courses, later integrating Computer Science students from the State University of Western Paraná – Unioeste, Foz do Iguaçu Campus, and Energy Engineering students from the Federal University of Latin American Integration – Unila, with the support of professors, registered as an Extension Project at the institution, and managed by the Foundation for Support of Teaching, Extension, Research and Post-graduation – FUNDEP. The main objective of the Group is to develop ultra-efficient vehicles powered by sustainable fuels with a focus on energy efficiency competitions, exhibitions, presentations and events to promote the developed vehicles. We highlight our history of participation in competitions such as the University Marathon of Energy Efficiency – MUEE and the Shell-Eco Marathon.',
     'home.about.teamwork.title': 'Teamwork',
     'home.about.teamwork.description': 'Students from various areas working together on innovative solutions',
     'home.about.efficiency.title': 'Energy Efficiency',
@@ -143,6 +146,7 @@ export const translations = {
     'sponsors.visit': 'VISIT WEBSITE',
     'sponsors.cta.title': 'Want to Be Our Partner?',
     'sponsors.cta.description': 'Join GCEE and be part of the energy efficiency revolution!',
+    'sponsors.cta.downloadLetter': 'Download Sponsorship Letter',
     'sponsors.cta.button': 'GET IN TOUCH',
     
     // Projects Page
@@ -180,6 +184,7 @@ export const translations = {
     'home.about.title': 'Sobre',
     'home.about.team': 'Nuestro Equipo',
     'home.about.description': 'El Grupo Cataratas de Eficiencia Energética está formado por estudiantes comprometidos con la innovación en movilidad sostenible',
+    'home.about.gceeDescription': 'El Grupo Cataratas de Eficiencia Energética – GCEE, fue formado en 2009 por alumnos de los cursos de Ingeniería Eléctrica e Ingeniería Mecánica, posteriormente integrando estudiantes de Ciencias de la Computación de la Universidad Estadual del Oeste de Paraná – Unioeste, Campus de Foz do Iguaçu, y de Ingeniería de Energía de la Universidad Federal de la Integración Latino Americana – Unila, contando con el apoyo de los profesores, registrado como Proyecto de Extensión en la institución, y gestionado por la Fundación de Apoyo a la Enseñanza, Extensión, Investigación y Posgrado – FUNDEP. El objetivo principal del Grupo es desarrollar vehículos ultra eficientes movidos por combustibles sostenibles con enfoque en competiciones de eficiencia energética, exposiciones, presentaciones y eventos para la divulgación de los vehículos desarrollados. Se destaca el historial de participación en competiciones como la Maratona Universitária de Eficiencia Energética – MUEE y la Shell-Eco Marathon.',
     'home.about.teamwork.title': 'Trabajo en Equipo',
     'home.about.teamwork.description': 'Estudiantes de diversas áreas trabajando juntos en soluciones innovadoras',
     'home.about.efficiency.title': 'Eficiencia Energética',
@@ -218,6 +223,7 @@ export const translations = {
     'sponsors.visit': 'VISITAR SITIO',
     'sponsors.cta.title': '¿Quiere Ser Nuestro Socio?',
     'sponsors.cta.description': '¡Únase a GCEE y sea parte de la revolución en eficiencia energética!',
+    'sponsors.cta.downloadLetter': 'Descargar Carta de Patrocinio',
     'sponsors.cta.button': 'PÓNGASE EN CONTACTO',
     
     // Projects Page

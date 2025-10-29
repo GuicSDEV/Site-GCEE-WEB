@@ -13,9 +13,14 @@ export function AboutSection() {
             {t('home.about.title')}
             <span className="bg-gradient-energy bg-clip-text text-transparent"> {t('home.about.team')}</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto mb-4">
             {t('home.about.description')}
           </p>
+          <div className="max-w-4xl mx-auto bg-gradient-card p-6 rounded-lg shadow-lg mb-8">
+            <p className="text-muted-foreground text-base text-left leading-relaxed">
+              {t('home.about.gceeDescription')}
+            </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">

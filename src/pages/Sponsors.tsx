@@ -19,6 +19,9 @@ import h2heliumLogo from "@/assets/sponsors/h2helium.png";
 import horizonLogo from "@/assets/sponsors/horizon.png";
 import xbriBanner from "@/assets/sponsors/banner-xbri.jpeg";
 import itaipuBanner from "@/assets/sponsors/banner-itaipu.jpg";
+import receitaFederalLogo from "@/assets/sponsors/receita-federal.png";
+import altairCyclesLogo from "@/assets/sponsors/altair-cycles.png";
+import tdiEngenhariaLogo from "@/assets/sponsors/3di-engenharia.avif";
 
 interface Sponsor {
   name: string;
@@ -113,6 +116,24 @@ const sponsors: Sponsor[] = [
     logo: horizonLogo,
     website: "https://www.horizonfuelcell.com",
     description: "Líder em tecnologia de células de combustível de hidrogênio."
+  },
+  {
+    name: "Receita Federal",
+    logo: receitaFederalLogo,
+    website: "https://www.gov.br/receitafederal/pt-br",
+    description: "Receita Federal do Brasil."
+  },
+  {
+    name: "Altair Cycles",
+    logo: altairCyclesLogo,
+    website: "#",
+    description: "Altair Cycles - Soluções em mobilidade."
+  },
+  {
+    name: "3Di Engenharia",
+    logo: tdiEngenhariaLogo,
+    website: "#",
+    description: "3Di Engenharia - Soluções em engenharia e tecnologia."
   }
 ];
 
@@ -219,15 +240,26 @@ export default function Sponsors() {
                 <p className="text-lg text-muted-foreground mb-8">
                   {t('sponsors.cta.description')}
                 </p>
-                <Button
-                  size="lg"
-                  className="bg-accent hover:bg-accent-light text-accent-foreground"
-                  asChild
-                >
-                  <a href="mailto:gcee@unioeste.br">
-                    {t('sponsors.cta.button')}
-                  </a>
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                    asChild
+                  >
+                    <a href="/carta-patrocinio.pdf" download>
+                      {t('sponsors.cta.downloadLetter')}
+                    </a>
+                  </Button>
+                  <Button
+                    size="lg"
+                    className="bg-accent hover:bg-accent-light text-accent-foreground"
+                    asChild
+                  >
+                    <a href="https://wa.me/5544999001713" target="_blank" rel="noopener noreferrer">
+                      {t('sponsors.cta.button')}
+                    </a>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
