@@ -40,12 +40,12 @@ export function Countdown() {
 
   const TimeUnit = ({ value, label }: { value: number; label: string }) => (
     <div className="flex flex-col items-center">
-      <div className="bg-gradient-to-br from-secondary to-accent rounded-lg p-4 min-w-[80px] shadow-lg">
-        <span className="text-4xl md:text-5xl font-bold text-primary-foreground">
+      <div className="bg-gradient-to-br from-secondary to-accent rounded-lg p-3 md:p-4 min-w-[60px] md:min-w-[80px] shadow-lg">
+        <span className="text-3xl md:text-5xl font-bold text-primary-foreground">
           {value.toString().padStart(2, "0")}
         </span>
       </div>
-      <span className="text-sm md:text-base text-muted-foreground mt-2 font-medium">
+      <span className="text-xs md:text-base text-muted-foreground mt-1 md:mt-2 font-medium">
         {label}
       </span>
     </div>
@@ -63,11 +63,10 @@ export function Countdown() {
           </p>
         </div>
         
-        <div className="flex justify-center gap-4 md:gap-6">
+        <div className="flex justify-center gap-2 md:gap-6">
           <TimeUnit value={timeLeft.days} label={t('home.countdown.days')} />
           <TimeUnit value={timeLeft.hours} label={t('home.countdown.hours')} />
           <TimeUnit value={timeLeft.minutes} label={t('home.countdown.minutes')} />
-          <TimeUnit value={timeLeft.seconds} label={t('home.countdown.seconds')} />
         </div>
       </CardContent>
     </Card>
