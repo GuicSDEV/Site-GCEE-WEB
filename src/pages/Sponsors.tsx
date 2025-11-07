@@ -48,10 +48,10 @@ const sponsors: Sponsor[] = [
     videoUrl: "https://www.youtube.com/embed/5Kejx8uZ9pg"
   },
   {
-    name: "PTI",
+    name: "Itaipu Parquetec",
     logo: ptiLogo,
-    website: "https://www.pti.org.br",
-    description: "Parque Tecnológico Itaipu - Promove o desenvolvimento científico, tecnológico e de inovação da região.",
+    website: "https://www.itaipuparquetec.org.br",
+    description: "Itaipu Parquetec - Promove o desenvolvimento científico, tecnológico e de inovação da região.",
     videoUrl: "https://www.youtube.com/embed/us9op0jeDCg"
   },
   {
