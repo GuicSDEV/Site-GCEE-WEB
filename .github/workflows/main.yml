@@ -1,0 +1,29 @@
+name: Deploy GCEE Web
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Instalar dependências
+        run: |
+          cd /home/sysadm/www/Site-GCEE-WEB
+          npm install
+
+      - name: Build
+        run: |
+          cd /home/sysadm/www/Site-GCEE-WEB
+          npm run build || true
+
+      - name: Reiniciar servidor local
+        run: |
+          pkill -f "node server.js" || true
+          nohup node /home/sysadm/www/Site-GCEE-WEB/server.js > /home/sysadm/www/Site-GCEE-WEB/logs/static_server.log 2>&1 &
