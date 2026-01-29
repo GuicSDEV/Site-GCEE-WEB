@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { motion } from "framer-motion";
 import shellLogo from "@/assets/sponsors/shell.png";
 import itaipuLogo from "@/assets/sponsors/itaipu.png";
 import ptiLogo from "@/assets/sponsors/pti.png";
@@ -144,6 +145,57 @@ const sponsors: Sponsor[] = [
   }
 ];
 
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const cardVariants = {
+  hidden: { 
+    opacity: 0, 
+    y: 50,
+    scale: 0.9
+  },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    scale: 1,
+    transition: {
+      type: "spring" as const,
+      stiffness: 100,
+      damping: 12
+    }
+  }
+};
+
+const heroVariants = {
+  hidden: { opacity: 0, y: -30 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      duration: 0.6
+    }
+  }
+};
+
+const ctaVariants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: { 
+    opacity: 1, 
+    scale: 1,
+    transition: {
+      duration: 0.5
+    }
+  }
+};
+
 export default function Sponsors() {
   const { t } = useLanguage();
 
@@ -153,9 +205,14 @@ export default function Sponsors() {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/10 via-background to-accent/5 py-20">
+        <section className="bg-gradient-to-br from-primary/10 via-background to-accent/5 py-20 overflow-hidden">
           <div className="container px-4">
-            <div className="text-center max-w-3xl mx-auto">
+            <motion.div 
+              className="text-center max-w-3xl mx-auto"
+              initial="hidden"
+              animate="visible"
+              variants={heroVariants}
+            >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
                 {t('sponsors.hero.title')}
                 <span className="bg-gradient-energy bg-clip-text text-transparent"> {t('sponsors.hero.partners')}</span>
@@ -163,7 +220,7 @@ export default function Sponsors() {
               <p className="text-lg md:text-xl text-muted-foreground">
                 {t('sponsors.hero.description')}
               </p>
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -171,67 +228,98 @@ export default function Sponsors() {
         <section className="py-16 bg-muted/30">
           <div className="container px-4">
             <div className="max-w-7xl mx-auto">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {sponsors.map((sponsor) => (
-                  <Card key={sponsor.name} className="bg-gradient-card border-0 shadow-lg overflow-hidden hover:shadow-xl transition-smooth">
-                    <CardContent className="p-6 space-y-4">
-                      {/* Logo */}
-                      <div className="bg-white p-6 rounded-lg flex items-center justify-center min-h-[150px]">
-                        <img
-                          src={sponsor.logo}
-                          alt={sponsor.name}
-                          className="max-w-[180px] max-h-[100px] w-auto h-auto object-contain"
-                        />
-                      </div>
-
-                      {/* Content */}
-                      <div className="space-y-4">
-                        <h3 className="text-xl font-bold text-foreground">
-                          {sponsor.name}
-                        </h3>
-                        <p className="text-sm text-muted-foreground line-clamp-3">
-                          {sponsor.description}
-                        </p>
-                        
-                        {sponsor.banner ? (
-                          <div className="aspect-video rounded-lg overflow-hidden">
-                            <img
-                              src={sponsor.banner}
-                              alt={`${sponsor.name} banner`}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                        ) : sponsor.videoUrl ? (
-                          <div className="aspect-video">
-                            <iframe
-                              src={sponsor.videoUrl}
-                              title={`${sponsor.name} video`}
-                              className="w-full h-full rounded-lg"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                              allowFullScreen
-                            />
-                          </div>
-                        ) : null}
-
-                        <Button
-                          className="w-full bg-accent hover:bg-accent-light text-accent-foreground group"
-                          asChild
+              <motion.div 
+                className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={containerVariants}
+              >
+                {sponsors.map((sponsor, index) => (
+                  <motion.div
+                    key={sponsor.name}
+                    variants={cardVariants}
+                    whileHover={{ 
+                      y: -8,
+                      transition: { type: "spring", stiffness: 300 }
+                    }}
+                  >
+                    <Card className="bg-gradient-card border-0 shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 h-full">
+                      <CardContent className="p-6 space-y-4">
+                        {/* Logo */}
+                        <motion.div 
+                          className="bg-white p-6 rounded-lg flex items-center justify-center min-h-[150px] overflow-hidden"
+                          whileHover={{ scale: 1.02 }}
+                          transition={{ type: "spring", stiffness: 300 }}
                         >
-                          <a
-                            href={sponsor.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center space-x-2"
+                          <motion.img
+                            src={sponsor.logo}
+                            alt={sponsor.name}
+                            className="max-w-[180px] max-h-[100px] w-auto h-auto object-contain"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: index * 0.05, duration: 0.3 }}
+                          />
+                        </motion.div>
+
+                        {/* Content */}
+                        <div className="space-y-4">
+                          <h3 className="text-xl font-bold text-foreground">
+                            {sponsor.name}
+                          </h3>
+                          <p className="text-sm text-muted-foreground line-clamp-3">
+                            {sponsor.description}
+                          </p>
+                          
+                          {sponsor.banner ? (
+                            <motion.div 
+                              className="aspect-video rounded-lg overflow-hidden"
+                              whileHover={{ scale: 1.02 }}
+                              transition={{ type: "spring", stiffness: 300 }}
+                            >
+                              <img
+                                src={sponsor.banner}
+                                alt={`${sponsor.name} banner`}
+                                className="w-full h-full object-cover"
+                              />
+                            </motion.div>
+                          ) : sponsor.videoUrl ? (
+                            <div className="aspect-video">
+                              <iframe
+                                src={sponsor.videoUrl}
+                                title={`${sponsor.name} video`}
+                                className="w-full h-full rounded-lg"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                              />
+                            </div>
+                          ) : null}
+
+                          <motion.div
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
                           >
-                            <span>{t('sponsors.visit')}</span>
-                            <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-smooth" />
-                          </a>
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
+                            <Button
+                              className="w-full bg-accent hover:bg-accent-light text-accent-foreground group"
+                              asChild
+                            >
+                              <a
+                                href={sponsor.website}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center space-x-2"
+                              >
+                                <span>{t('sponsors.visit')}</span>
+                                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                              </a>
+                            </Button>
+                          </motion.div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -239,36 +327,65 @@ export default function Sponsors() {
         {/* Call to Action */}
         <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
           <div className="container px-4">
-            <Card className="max-w-3xl mx-auto bg-gradient-card border-0 shadow-xl">
-              <CardContent className="p-12 text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  {t('sponsors.cta.title')}
-                </h2>
-                <p className="text-lg text-muted-foreground mb-8">
-                  {t('sponsors.cta.description')}
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button
-                    size="lg"
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                    asChild
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={ctaVariants}
+            >
+              <Card className="max-w-3xl mx-auto bg-gradient-card border-0 shadow-xl overflow-hidden">
+                <CardContent className="p-12 text-center">
+                  <motion.h2 
+                    className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
                   >
-                    <a href="/carta-patrocinio.pdf" download>
-                      {t('sponsors.cta.downloadLetter')}
-                    </a>
-                  </Button>
-                  <Button
-                    size="lg"
-                    className="bg-accent hover:bg-accent-light text-accent-foreground"
-                    asChild
+                    {t('sponsors.cta.title')}
+                  </motion.h2>
+                  <motion.p 
+                    className="text-lg text-muted-foreground mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 }}
                   >
-                    <a href="https://wa.me/5544999001713" target="_blank" rel="noopener noreferrer">
-                      {t('sponsors.cta.button')}
-                    </a>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                    {t('sponsors.cta.description')}
+                  </motion.p>
+                  <motion.div 
+                    className="flex flex-col sm:flex-row gap-4 justify-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 }}
+                  >
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                      <Button
+                        size="lg"
+                        className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                        asChild
+                      >
+                        <a href="/carta-patrocinio.pdf" download>
+                          {t('sponsors.cta.downloadLetter')}
+                        </a>
+                      </Button>
+                    </motion.div>
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                      <Button
+                        size="lg"
+                        className="bg-accent hover:bg-accent-light text-accent-foreground"
+                        asChild
+                      >
+                        <a href="https://wa.me/5544999001713" target="_blank" rel="noopener noreferrer">
+                          {t('sponsors.cta.button')}
+                        </a>
+                      </Button>
+                    </motion.div>
+                  </motion.div>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
         </section>
       </main>
