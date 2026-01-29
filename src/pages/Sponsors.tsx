@@ -22,6 +22,7 @@ import itaipuBanner from "@/assets/sponsors/banner-itaipu.jpg";
 import receitaFederalLogo from "@/assets/sponsors/receita-federal.png";
 import altairCyclesLogo from "@/assets/sponsors/altair-cycles.png";
 import tdiEngenhariaLogo from "@/assets/sponsors/3di-engenharia.avif";
+import ponteNovaEnergiaLogo from "@/assets/sponsors/ponte-nova-energia.png";
 
 interface Sponsor {
   name: string;
@@ -134,6 +135,12 @@ const sponsors: Sponsor[] = [
     logo: tdiEngenhariaLogo,
     website: "#",
     description: "3Di Engenharia - Soluções em engenharia e tecnologia."
+  },
+  {
+    name: "Ponte Nova Energia",
+    logo: ponteNovaEnergiaLogo,
+    website: "https://pontenovaenergia.com",
+    description: "Ponte Nova Energia - Soluções inovadoras em energia sustentável."
   }
 ];
 
